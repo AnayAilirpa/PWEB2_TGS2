@@ -8,7 +8,7 @@
 - [Courses Classes](Course/README.md#Jobsheet2)
 
 # Pendahuluan 📢
-Repository ini dibuat untuk memenuhi tugas mata kuliah Praktikum Pemrograman Web 2. Terdiri dari Jobsheet 1 sampai dengan Jobsheet 2 yang membahas tentang OOP dalam PHP. OOP (Object-Oriented Programming) sendiri ialah paradigma pemrograman yang berfokus pada konsep objek. Konsep dasar Object-Oriented Programming (OOP) terdiri dari empat pilar utama: Encapsulation, Inheritance, Polymorphism, dan Abstraction. Di repository ini saya akan memberikan penjelasan secara singkat dari masing-masing konsep tersebut.
+Repository ini dibuat untuk memenuhi tugas mata kuliah Praktikum Pemrograman Web 2. Tugas ini terdiri dari lima tugas utama yang dirancang untuk menguji dan memperkuat pemahaman Anda tentang prinsip-prinsip OOP. Setiap tugas mencakup implementasi konsep OOP yang spesifik dan pengintegrasiannya dengan operasi basis data. Dengan menyelesaikan tugas-tugas ini, Anda akan memperoleh pengalaman praktis dalam merancang dan mengembangkan aplikasi PHP yang terstruktur dengan baik dan efisien.
 ***
 ## Author ✍🏻
 [@YanaAprilia](https://github.com/AnayAilirpa)
