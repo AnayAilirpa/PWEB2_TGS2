@@ -17,7 +17,7 @@ Tabel `Courses` berisi kolom-kolom berikut.
 | created_at | timestamp | Timestamp saat mata kuliah dibuat. |
 | updated_at | timestamp | Timestamp saat mata kuliah terakhir diperbarui. |
 
-Primary Key: `id`
+- Primary Key: `id`
 
 ### Tabel `Course_Classes`
 Tabel `Course_Classes` berisi kolom-kolom berikut.
@@ -30,9 +30,8 @@ Tabel `Course_Classes` berisi kolom-kolom berikut.
 | created_at | timestamp | Timestamp saat relasi ini dibuat. |
 | updated_at | timestamp | Timestamp saat relasi ini terakhir diperbarui. |
 
-Primary Key: `id`
-
-Foreign Key: `course_id` merujuk ke kolom `id` pada tabel `courses`.
+- Primary Key: `id`
+- Foreign Key: `course_id` merujuk ke kolom `id` pada tabel `courses`.
 		
 		
 
