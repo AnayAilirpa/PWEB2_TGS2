@@ -286,7 +286,7 @@ Dalam file Koneksi.php sudah terdapat method `__construct`.
 //membuat class Courses
 class Courses {
 	//membuat atribut
-  private $host = "localhost";
+  	private $host = "localhost";
 	private $username = "root";
 	private $password = "";
 	private $database = "course";
@@ -312,7 +312,7 @@ Dalam file Koneksi.php terdapat lima _attribute_ dengan akses `private` dan `pro
 //membuat class Courses
 class Courses {
 	//membuat atribut
-  private $host = "localhost";
+  	private $host = "localhost";
 	private $username = "root";
 	private $password = "";
 	private $database = "course";
@@ -338,7 +338,7 @@ Dalam file Koneksi.php terdapat satu _class parent_ yaitu class `Courses` dan _c
 //membuat class Courses
 class Courses {
 	//membuat atribut
-  private $host = "localhost";
+  	private $host = "localhost";
 	private $username = "root";
 	private $password = "";
 	private $database = "course";
@@ -368,7 +368,7 @@ Polymorphism adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang 
 Dalam file Koneksi.php terdapat dua method dengan nama yang sama, yaitu `tampil_data()`.
 ```php
 	//membuat method tampil_data untuk menampilkan data dari tabel courses
-    public function tampil_data()
+    	public function tampil_data()
 	{
 		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM courses");
@@ -382,7 +382,7 @@ Dalam file Koneksi.php terdapat dua method dengan nama yang sama, yaitu `tampil_
 > Method `tampil_data()` di atas adalah method yang berada dalam class `Courses`, sedangkan Method `tampil_data()` di bawah adalah method yang berada dalam class `Course_Classes`. Keduanya merupakan method yang sama, karena method pada class `Course_Classes` merupakan hasil pewarisan dari class `Courses`. Akan tetapi, dilakukan sedikit modifikasi sehingga akan menampilkan output yang berbeda saat masing masing method dalam kelas-kelas tersebut dipanggil.
 ```php
 	//membuat method tampil_data untuk menampilkan data dari tabel Course_Classes
-    public function tampil_data()
+    	public function tampil_data()
 	{
 		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM Course_Classes");
