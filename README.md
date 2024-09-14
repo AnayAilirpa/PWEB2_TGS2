@@ -5,8 +5,7 @@
 
 ## Daftar Isi 📃
 - [Courses](Courses/README.md#Courses)
-- [Courses Classes](Course/README.md#CoursesClasses)
-- [Koneksi](Course/README.md#Koneksi)
+- [Database](Course/README.md#Course)
 
 # Pendahuluan 📢
 Repository ini dibuat untuk memenuhi tugas mata kuliah Praktikum Pemrograman Web 2. Tugas ini terdiri dari lima tugas utama yang dirancang untuk menguji dan memperkuat pemahaman Anda tentang prinsip-prinsip OOP. Setiap tugas mencakup implementasi konsep OOP yang spesifik dan pengintegrasiannya dengan operasi basis data.
