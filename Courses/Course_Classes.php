@@ -57,7 +57,7 @@ $database = $db->tampil_data();
     	<div class="container mt-4">
         <!-- Tabel dengan kelas table dan table-hover untuk tampilan tabel yang interaktif -->
         <table class="table table-hover table-bordered">
-			<!-- Judul Tabel -->
+	    <!-- Judul Tabel -->
             <thead>
                 <tr>
                     <th>No</th> 
@@ -69,7 +69,7 @@ $database = $db->tampil_data();
                     <th>Updated_at</th> 
                 </tr>
             </thead>
-			<!-- Isi Tabel -->
+	    <!-- Isi Tabel -->
             <tbody>
             <?php 
             //inisialisasi nomor urut untuk tabel
