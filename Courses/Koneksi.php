@@ -1,12 +1,14 @@
 <?php 
+//membuat class Courses
 class Courses {
+	//membuat atribut
     private $host = "localhost";
 	private $username = "root";
 	private $password = "";
 	private $database = "course";
 	protected $koneksi = "";
 	
-	// Konstruksi untuk melakukan koneksi ke database
+	//inisialisasi koneksi untuk melakukan koneksi ke database
 	public function __construct(){
 		$this->koneksi = mysqli_connect($this->host, $this->username, $this->password, $this->database);
 		if (mysqli_connect_errno()){
@@ -14,10 +16,10 @@ class Courses {
 		}
 	}
 
-	// Metode untuk menampilkan data dari tabel courses
+	//membuat method tampil_data untuk menampilkan data dari tabel courses
     public function tampil_data()
 	{
-		$hasil = [];  // Inisialisasi variabel $hasil
+		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM courses");
 		while($row = mysqli_fetch_array($data)){
 			$hasil[] = $row;
@@ -26,15 +28,15 @@ class Courses {
 	}
 }
 
-// Kelas turunan dari Courses
+//membuat class Course_Classes dari kelas Courses
 class Course_Classes extends Courses {
 
-	// Gunakan koneksi dari kelas induk, tidak perlu menduplikasi constructor
+	//tidak perlu membuat method __construct, karena class Course_Classes merupakan turunan dari class Courses
 
-	// Metode untuk menampilkan data dari tabel Course_Classes
+	//membuat method tampil_data untuk menampilkan data dari tabel Course_Classes
     public function tampil_data()
 	{
-		$hasil = [];  // Inisialisasi variabel $hasil
+		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM Course_Classes");
 		while($row = mysqli_fetch_array($data)){
 			$hasil[] = $row;

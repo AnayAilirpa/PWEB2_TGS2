@@ -1,12 +1,15 @@
 <?php 
-// Menyertakan file koneksi.php yang berisi pengaturan koneksi database
+//menambahan file koneksi.php yang berisi pengaturan koneksi database
 include('koneksi.php');
 
-// Membuat objek dari kelas Courses dan mengambil data kursus
+//instansiasi class Courses
 $db = new Courses();
+
+//mengambil data dari tabel courses
 $database = $db->tampil_data();
 ?>
 
+<!-- Membuat tampilan HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,30 +33,31 @@ $database = $db->tampil_data();
 
 <!-- Navigasi Tab -->
 <nav class="navbar">
-  <div class="container">
-    <!-- Judul Navbar -->
-    <div class="navbar-title">Courses Management</div>
-    
-    <!-- Tab Navigasi -->
-    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <!-- Tab untuk Kursus -->
-        <a class="nav-link active" id="course-tab" href="Course.php" role="tab" aria-controls="course-tab-pane" aria-selected="true">Course</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <!-- Tab untuk Kelas Kursus -->
-        <a class="nav-link" id="Course_Classes-tab" href="Course_Classes.php" role="tab" aria-controls="Course_Classes-tab-pane" aria-selected="false">Course Classes</a>
-    </ul>
-  </div>
+  	<div class="container">
+    	<!-- Judul Navbar -->
+    	<div class="navbar-title">Courses Management</div>
+    	<!-- Tab Navigasi -->
+    	<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+      		<li class="nav-item" role="presentation">
+        	<!-- Tab untuk Course -->
+        	<a class="nav-link active" id="course-tab" href="Course.php" role="tab" aria-controls="course-tab-pane" aria-selected="true">Course</a>
+      		</li>
+      		<li class="nav-item" role="presentation">
+        	<!-- Tab untuk Course_Classes -->
+        	<a class="nav-link" id="Course_Classes-tab" href="Course_Classes.php" role="tab" aria-controls="Course_Classes-tab-pane" aria-selected="false">Course Classes</a>
+    	</ul>
+  	</div>
 </nav>
 
 <!-- Konten Tab -->
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-    <!-- Konten untuk tab Home -->
-    <div class="container mt-4">
+	<!-- Konten Tab Course -->
+  	<div class="tab-pane fade show active" id="nav-Course" role="tabpanel" aria-labelledby="nav-Course-tab" tabindex="0">
+    	<!-- Konten untuk tab Course -->
+    	<div class="container mt-4">
         <!-- Tabel dengan kelas table dan table-hover untuk tampilan tabel yang interaktif -->
         <table class="table table-hover table-bordered">
+			<!-- Judul Tabel -->
             <thead>
                 <tr>
                     <th>No</th>
@@ -68,11 +72,12 @@ $database = $db->tampil_data();
                     <th>Updated_at</th>
                 </tr>
             </thead>
+			<!-- Isi Tabel -->
             <tbody>
             <?php 
-            // Menginisialisasi nomor urut untuk tabel
+            //inisialisasi nomor urut untuk tabel
             $no = 1;
-            // Melakukan iterasi pada setiap baris data kursus dan menampilkannya dalam tabel
+            //memanggil fungsi tampil_data dan menampilkannya dalam tabel
             foreach($database as $row){ ?>
                 <tr>
                     <td><?php echo $no++; ?></td>
@@ -89,8 +94,8 @@ $database = $db->tampil_data();
             <?php } ?>
             </tbody>
         </table>
-    </div>
-  </div>
+    	</div>
+  	</div>
 </div>
 </body>
 </html>
