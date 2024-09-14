@@ -1,10 +1,10 @@
 # Course
 
-## Penjelasan Database `Course`
-Tabel courses menyimpan informasi mengenai berbagai mata kuliah yang ditawarkan dalam sistem.
+## Database `Course`
+Basis Data ini berisi struktur dan data untuk dua tabel: `courses` dan `course_classes`.
 
 ### Tabel `Courses`
-Tabel `courses` berisi kolom-kolom berikut.
+Tabel `Courses` berisi kolom-kolom berikut.
 | Nama Kolom  | Tipe Data | Deskripsi |
 |--|--|--|
 | id | int(100)  | Identifier unik untuk setiap mata kuliah (Primary Key, Auto Increment). |
@@ -17,7 +17,21 @@ Tabel `courses` berisi kolom-kolom berikut.
 | created_at | timestamp | Timestamp saat mata kuliah dibuat. |
 | updated_at | timestamp | Timestamp saat mata kuliah terakhir diperbarui. |
 
-	
+Primary Key: `id`
+
+### Tabel `Course_Classes`
+Tabel `Course_Classes` berisi kolom-kolom berikut.
+| Nama Kolom  | Tipe Data | Deskripsi |
+|--|--|--|
+| id | int(100)  | Identifier unik untuk setiap relasi kelas-mata kuliah (Primary Key, Auto Increment). |
+| student_class_id | int(100) | ID kelas siswa yang terkait. |
+| course_id | int(100) | ID mata kuliah yang terkait. |
+| deleted_at | timestamp | Timestamp ketika relasi ini dihapus (soft delete). |
+| created_at | timestamp | Timestamp saat relasi ini dibuat. |
+| updated_at | timestamp | Timestamp saat relasi ini terakhir diperbarui. |
+
+Primary Key: `id`
+Foreign Key: `course_id` merujuk ke kolom `id` pada tabel `courses`.
 		
 		
 
