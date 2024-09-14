@@ -31,6 +31,7 @@ Tabel `Course_Classes` berisi kolom-kolom berikut.
 | updated_at | timestamp | Timestamp saat relasi ini terakhir diperbarui. |
 
 Primary Key: `id`
+
 Foreign Key: `course_id` merujuk ke kolom `id` pada tabel `courses`.
 		
 		
