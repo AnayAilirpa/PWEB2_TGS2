@@ -4,7 +4,7 @@
 ![NIM](https://img.shields.io/badge/NIM-230202047-forestgreen.svg)  
 
 ## Daftar Isi 📃
-- [Courses](Course/README.md#Courses)
+- [Courses](Courses/README.md#Courses)
 - [Courses Classes](Course/README.md#CoursesClasses)
 - [Koneksi](Course/README.md#Koneksi)
 
