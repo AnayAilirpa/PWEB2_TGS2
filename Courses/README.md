@@ -331,7 +331,7 @@ class Courses {
 > Attribut `host`, `username`, `password`, dan `database` dalam class `Courses` dideklarasikan sebagai private dengan tujuan agar tidak dapat diakses oleh kelas turunan maupun kelas lain. Sedangkan, attribut `koneksi` (atau bisa dikatakan property) dideklarasikan sebagai `protected` dengan tujuan agar dapat diwariskan sehingga kelas turunan tidak perlu membuat attribut dan menginisiasikan method `__construct(` lagi untuk terhubung dengan database MySQL.
 
 ### 4. Membuat Kelas Turunan dengan _Inheritance_ 
-Inheritance adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang memungkinkan Anda untuk membuat kelas baru (_class child_) yang mewarisi sifat dan perilaku dari kelas yang sudah ada (_class parent_). Dengan menggunakan pewarisan, Anda dapat mendefinisikan _class parent_ dengan properti dan metode, kemudian memperluas atau mengubah fungsionalitas di dalam kelas turunan.
+_Inheritance_ adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang memungkinkan Anda untuk membuat kelas baru (_class child_) yang mewarisi sifat dan perilaku dari kelas yang sudah ada (_class parent_). Dengan menggunakan pewarisan, Anda dapat mendefinisikan _class parent_ dengan properti dan metode, kemudian memperluas atau mengubah fungsionalitas di dalam kelas turunan.
 
 Dalam file Koneksi.php terdapat satu _class parent_ yaitu class `Courses` dan _class child_ atau kelas turunan yaitu `Course_Classes`.
 ```php
@@ -363,7 +363,7 @@ class Course_Classes extends Courses {
 > Dapat dilihat, pada kelas turunan `Course_Classes` tidak perlu menginisialisasikan method `__construct()` lagi untuk menghubungkan dengan database MySQL karena class `Course_Classes` merupakan kelas turunan yang pastinya mewarisi baik method maupun property, kecuali jika di-set akses `private`. Jika method atau property dideklarasikan sebagai `private` maka kelas turunan tidak bisa langsung mengaksesnya, diperlukan method yang di-set akses `public` atau `protected` untuk mengaksesnya.
 
 ### 5. Menerapkan _Polymorphism_ 
-Polymorphism adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang memungkinkan objek dari berbagai kelas untuk diakses melalui antarmuka atau kelas dasar yang sama. Konsep ini mendukung fleksibilitas dan ekspansi kode, memungkinkan Anda untuk menggunakan objek dengan cara yang konsisten meskipun mereka berasal dari kelas yang berbeda.
+_Polymorphism_ adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang memungkinkan objek dari berbagai kelas untuk diakses melalui antarmuka atau kelas dasar yang sama. Konsep ini mendukung fleksibilitas dan ekspansi kode, memungkinkan Anda untuk menggunakan objek dengan cara yang konsisten meskipun mereka berasal dari kelas yang berbeda.
 
 Dalam file Koneksi.php terdapat dua method dengan nama yang sama, yaitu `tampil_data()`.
 ```php
