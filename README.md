@@ -1,4 +1,4 @@
-# ## Tentang Saya 👋🏻
+## Tentang Saya 👋🏻
 ![Nama](https://img.shields.io/badge/Nama-Yana_Aprilia-forestgreen.svg)  
 ![Kelas](https://img.shields.io/badge/Kelas-TI--2B-forestgreen.svg)  
 ![NIM](https://img.shields.io/badge/NIM-230202047-forestgreen.svg)  
