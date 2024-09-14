@@ -2,24 +2,24 @@
 
 ## Implementasi Prinsip OOP dalam PHP
 Tugas ini bertujuan untuk mengimplementasikan berbagai prinsip Object-Oriented Programming (OOP) dan teknik pemrograman yang efisien dalam PHP. Dengan menyelesaikan tugas-tugas berikut:
-1. **Membuat Tampilan Berbasis OOP**: Menggunakan konsep OOP untuk merancang tampilan yang dapat mengambil data dari basis data MySQL dengan cara yang terstruktur dan modular.
-2. **Menggunakan Metode `__construct`**: Menghubungkan ke basis data menggunakan metode konstruktor dalam kelas untuk inisialisasi otomatis saat objek dibuat.
-3. **Menerapkan Enkapsulasi**: Melindungi data dan metode di dalam kelas dengan menggunakan prinsip enkapsulasi, sehingga hanya dapat diakses dan dimodifikasi melalui metode yang disediakan.
-4. **Membuat Kelas Turunan dengan Pewarisan**: Menggunakan pewarisan untuk menciptakan kelas turunan yang memperluas fungsionalitas dari kelas dasar.
-5. **Menerapkan Polimorfisme**: Memanfaatkan polimorfisme untuk memungkinkan berbagai kelas berperilaku sesuai dengan antarmuka atau kelas dasar yang sama, meningkatkan fleksibilitas dan kemampuan kode.
+1. Buatlah sebuah **tampilan berbasis OOP**, dengan mengambil data dari basis data MySQL.
+2. Gunakan **metode `__construct`** sebagai penghubung ke basis data.
+3. Terapkan **enkapsulasi** sesuai dengan logika studi kasus.
+4. Buatlah kelas turunan menggunakan konsep **pewarisan**.
+5. Terapkan **polimorfisme** untuk setidaknya dua peran sesuai dengan studi kasus.
 
 # Penjabaran
 
 ### 1. Membuat Tampilan Berbasis OOP
-Membuat tampilan berbasis OOP melibatkan penggunaan prinsip-prinsip Pemrograman Berorientasi Objek untuk merancang dan mengelola tampilan dalam aplikasi. Dalam konteks ini, tampilan merujuk pada bagian dari aplikasi yang menampilkan data kepada pengguna. Pendekatan berbasis OOP memungkinkan kita untuk menyusun kode secara lebih modular, terstruktur, dan mudah dipelihara.
+Membuat tampilan berbasis OOP melibatkan penggunaan prinsip-prinsip Object-Oriented Programming (OOP) untuk merancang dan mengelola tampilan dalam aplikasi. Dalam konteks ini, tampilan merujuk pada bagian dari aplikasi yang menampilkan data kepada pengguna. Pendekatan berbasis OOP memungkinkan kita untuk menyusun kode secara lebih modular, terstruktur, dan mudah dipelihara.
 
-Berikut adalah program dalam file Koneksi.php yang berfungssi untuk memanggil data dari database
+Berikut adalah program dalam file Koneksi.php yang berfungsi untuk memanggil data dari database `Course`.
 ```php
 <?php 
 //membuat class Courses
 class Courses {
 	//membuat atribut
-    private $host = "localhost";
+    	private $host = "localhost";
 	private $username = "root";
 	private $password = "";
 	private $database = "course";
@@ -34,7 +34,7 @@ class Courses {
 	}
 
 	//membuat method tampil_data untuk menampilkan data dari tabel courses
-    public function tampil_data()
+    	public function tampil_data()
 	{
 		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM courses");
@@ -51,7 +51,7 @@ class Course_Classes extends Courses {
 	//tidak perlu membuat method __construct, karena class Course_Classes merupakan turunan dari class Courses
 
 	//membuat method tampil_data untuk menampilkan data dari tabel Course_Classes
-    public function tampil_data()
+    	public function tampil_data()
 	{
 		$hasil = []; 
 		$data = mysqli_query($this->koneksi,"SELECT * FROM Course_Classes");
@@ -63,6 +63,8 @@ class Course_Classes extends Courses {
 }
 ?>
 ```
+
+> Dalam Program di atas, terdapat method `tampil_data()` pada class `Courses` dan juga pada class `Course_Class` yang berfungsi untuk menampilkan data dari masing-masing tabel yang dipanggil pada database `Course`.
 
 Berikut adalah program dalam file Course.php yang bertugas untuk menampilkan tabel Course 
 ```php
@@ -125,7 +127,7 @@ $database = $db->tampil_data();
     	<div class="container mt-4">
         <!-- Tabel dengan kelas table dan table-hover untuk tampilan tabel yang interaktif -->
         <table class="table table-hover table-bordered">
-			<!-- Judul Tabel -->
+	    <!-- Judul Tabel -->
             <thead>
                 <tr>
                     <th>No</th>
@@ -140,7 +142,7 @@ $database = $db->tampil_data();
                     <th>Updated_at</th>
                 </tr>
             </thead>
-			<!-- Isi Tabel -->
+	    <!-- Isi Tabel -->
             <tbody>
             <?php 
             //inisialisasi nomor urut untuk tabel
@@ -168,6 +170,7 @@ $database = $db->tampil_data();
 </body>
 </html>
 ```
+> Dalam prorgam di atas, pemanggilan method `tampil_data()` dari class `Courses` dilakukan dengan PHP. Untuk tampilannya, Saya menggunakan HTML dan Bootstrap dengan sedikit CSS untuk mengatur judul navbar.
 
 Output dari Course.php
 ![image](https://github.com/user-attachments/assets/87e11ee9-31eb-445a-91fc-b42567bbe16c)
@@ -178,10 +181,10 @@ Berikut adalah program dalam file Course_Classes.php yang bertugas untuk menampi
 //menambahan file koneksi.php yang berisi pengaturan koneksi database
 include('koneksi.php');
 
-//instansiasi class Courses
+//instansiasi class Courses_Classes
 $db = new Course_Classes();
 
-//mengambil data dari tabel courses
+//mengambil data dari tabel courses_classes
 $database = $db->tampil_data();
 ?>
 
@@ -233,7 +236,7 @@ $database = $db->tampil_data();
     	<div class="container mt-4">
         <!-- Tabel dengan kelas table dan table-hover untuk tampilan tabel yang interaktif -->
         <table class="table table-hover table-bordered">
-			<!-- Judul Tabel -->
+	    <!-- Judul Tabel -->
             <thead>
                 <tr>
                     <th>No</th> 
@@ -245,7 +248,7 @@ $database = $db->tampil_data();
                     <th>Updated_at</th> 
                 </tr>
             </thead>
-			<!-- Isi Tabel -->
+	    <!-- Isi Tabel -->
             <tbody>
             <?php 
             //inisialisasi nomor urut untuk tabel
@@ -270,6 +273,7 @@ $database = $db->tampil_data();
 </body>
 </html>
 ```
+> Dalam prorgam di atas, pemanggilan method `tampil_data()` dari class `Course_Classes` dilakukan dengan PHP. Untuk tampilannya, Saya menggunakan HTML dan Bootstrap dengan sedikit CSS untuk mengatur judul navbar.
 
 Output dari Course.php
 ![image](https://github.com/user-attachments/assets/84bb4233-a875-4a69-bb94-738cbda37d11)
@@ -298,7 +302,7 @@ class Courses {
 ...
 }
 ```
-> 
+> Method `__construct` dalam file ini berisi program untuk menghubungkan koneksi dengan database `Course` yang berisi tabel `Courses` dan tabel `Course_Classes`. 
 
 ### 3. Menerapkan _Encapsulation_
  _Encapsulation_ adalah prinsip dasar dalam _Object-Oriented Programming_ (OOP) yang bertujuan untuk melindungi data dan metode dalam suatu kelas dari akses langsung yang tidak diinginkan. Dengan menerapkan enkapsulasi, data dalam class hanya dapat diakses atau dimodifikasi melalui method yang telah ditentukan, sehingga meningkatkan keamanan dan integritas data.
@@ -324,12 +328,12 @@ class Courses {
 ...
 }
 ```
-> Attribut `host`, `username`, `password`, dan `database` dalam class `Course` dideklarasikan sebagai private dengan tujuan agar tidak dapat diakses oleh kelas turunan maupun kelas lain. Sedangkan, attribut `koneksi` (atau bisa dikatakan property) dideklarasikan sebagai `protected` dengan tujuan agar dapat diwariskan sehingga kelas turunan tidak perlu membuat attribut dan menginisiasikan method `__construct(` lagi untuk terhubung dengan database MySQL.
+> Attribut `host`, `username`, `password`, dan `database` dalam class `Courses` dideklarasikan sebagai private dengan tujuan agar tidak dapat diakses oleh kelas turunan maupun kelas lain. Sedangkan, attribut `koneksi` (atau bisa dikatakan property) dideklarasikan sebagai `protected` dengan tujuan agar dapat diwariskan sehingga kelas turunan tidak perlu membuat attribut dan menginisiasikan method `__construct(` lagi untuk terhubung dengan database MySQL.
 
-### 4. Membuat Kelas _Inheritance_ dengan Pewarisan
+### 4. Membuat Kelas Turunan dengan _Inheritance_ 
 Inheritance adalah konsep dasar dalam _Object-Oriented Programming_ (OOP) yang memungkinkan Anda untuk membuat kelas baru (_class child_) yang mewarisi sifat dan perilaku dari kelas yang sudah ada (_class parent_). Dengan menggunakan pewarisan, Anda dapat mendefinisikan _class parent_ dengan properti dan metode, kemudian memperluas atau mengubah fungsionalitas di dalam kelas turunan.
 
-Dalam file Koneksi.php terdapat satu _class parent_ yaitu class `Course` dan _class child_ atau kelas turunan yaitu `Course_Classes`.
+Dalam file Koneksi.php terdapat satu _class parent_ yaitu class `Courses` dan _class child_ atau kelas turunan yaitu `Course_Classes`.
 ```php
 //membuat class Courses
 class Courses {
@@ -375,7 +379,7 @@ Dalam file Koneksi.php terdapat dua method dengan nama yang sama, yaitu `tampil_
 	}
 
 ```
-> Method `tampil_data()` di atas adalah method yang berada dalam class `Course`, sedangkan Method `tampil_data()` di bawah adalah method yang berada dalam class `Course_Classes`. Keduanya merupakan method yang sama, karena method pada class `Course_Classes` merupakan hasil pewarisan dari class `Course`. Akan tetapi, dilakukan sedikit modifikasi sehingga akan menampilkan output yang berbeda saat masing masing method dalam kelas-kelas tersebut dipanggil.
+> Method `tampil_data()` di atas adalah method yang berada dalam class `Courses`, sedangkan Method `tampil_data()` di bawah adalah method yang berada dalam class `Course_Classes`. Keduanya merupakan method yang sama, karena method pada class `Course_Classes` merupakan hasil pewarisan dari class `Courses`. Akan tetapi, dilakukan sedikit modifikasi sehingga akan menampilkan output yang berbeda saat masing masing method dalam kelas-kelas tersebut dipanggil.
 ```php
 	//membuat method tampil_data untuk menampilkan data dari tabel Course_Classes
     public function tampil_data()
@@ -389,7 +393,7 @@ Dalam file Koneksi.php terdapat dua method dengan nama yang sama, yaitu `tampil_
 	}
 ```
 
-Method `tampil_data()` dalam class `Course` dipanggil dalam file Course.php. Dan Method `tampil_data()` dalam class `Course_Classes` dipanggil dalam file Course_Classes.php. Keduanya memiliki output yang berbeda walaupun diambil dari nama method yang sama.
+Method `tampil_data()` dalam class `Courses` dipanggil dalam file Course.php. Dan Method `tampil_data()` dalam class `Course_Classes` dipanggil dalam file Course_Classes.php. Keduanya memiliki output yang berbeda walaupun diambil dari nama method yang sama.
 ```php
 <?php 
 //menambahan file koneksi.php yang berisi pengaturan koneksi database
@@ -402,7 +406,7 @@ $db = new Courses();
 $database = $db->tampil_data();
 ?>
 ```
-> Kode program di atas adalah kode program php dalam file Course.php, sedangkan kode program di bawah adalah kode program php dalam file Course_Classes.php. Lihatlah, keduanya memanggil method yang sama. Yang membedakan hanya saat instansiasi, masing masing program menginisiasi class yang berbeda yang atas menginstansiasi class `Course` sehingga output yang keluar adalah data dari tabel **Course**. Sedangkan kode program di bawah ini menginstansiasi class `Course_Classes` sehingga output yang keluar adalah data dari tabel **Course_Classes**
+> Kode program di atas adalah kode program php dalam file Course.php, sedangkan kode program di bawah adalah kode program php dalam file Course_Classes.php. Lihatlah, keduanya memanggil method yang sama. Yang membedakan hanya saat instansiasi, masing masing program menginisiasi class yang berbeda yang atas menginstansiasi class `Courses` sehingga output yang keluar adalah data dari tabel **Course**. Sedangkan kode program di bawah ini menginstansiasi class `Course_Classes` sehingga output yang keluar adalah data dari tabel **Course_Classes**
 ```php
 <?php 
 //menambahan file koneksi.php yang berisi pengaturan koneksi database
